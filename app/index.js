@@ -16,15 +16,16 @@ const Home = () => {
                     <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%"/>
                 ),
                 headerRight:() => (
-                    <ScreenHeaderBtn iconUrl={images.profile} dimension="100%"/>
+                    <ScreenHeaderBtn iconUrl={images.profile} dimension="90%"/>
                 ),
                 headerTitle: ""
             }}
             />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={true}>
                 <View style={{
                     flex: 1,
-                    padding: SIZES.medium
+                    padding: SIZES.medium,
+                    backgroundColor: COLORS.gray2
                 }}>
                     <Welcome/>
                     <Popularjobs/>
