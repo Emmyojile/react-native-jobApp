@@ -25,7 +25,7 @@ const Home = () => {
                 <View style={{
                     flex: 1,
                     padding: SIZES.medium,
-                    backgroundColor: COLORS.gray2
+                    backgroundColor: "#EEE7DA"
                 }}>
                     <Welcome/>
                     <Popularjobs/>
