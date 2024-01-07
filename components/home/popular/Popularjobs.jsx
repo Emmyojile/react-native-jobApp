@@ -13,14 +13,15 @@ import { COLORS, SIZES } from "../../../constants";
 import PopularjobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
 
-
 const Popularjobs = () => {
   const router = useRouter();
-  const {data, isLoading, error} = useFetch('search', {
-    query: 'React developer',
-    num_pages: 1
-  })
+  const { data, isLoading, error } = useFetch("search", {
+    query: "React developer",
+    num_pages: 1,
+  });
+  const [selectedJob, setSelectedJob] = useState();
 
+  const handleCardPress = (item) => {};
   console.log(data);
   return (
     <View style={styles.container}>
@@ -39,8 +40,14 @@ const Popularjobs = () => {
         ) : (
           <FlatList
             data={data}
-            renderItem={({ item }) => <PopularjobCard item={item} />}
-            keyExtractor={(item) => item}
+            renderItem={({ item }) => (
+              <PopularjobCard
+                item={item}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
+              />
+            )}
+            keyExtractor={(item) => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
           />
