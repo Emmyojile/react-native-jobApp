@@ -66,7 +66,7 @@ const JobDetails = () => {
           ) : data.length === 0 ? (
             <Text>No Data</Text>
           ) : (
-            <View>
+            <View style={{padding: SIZES.medium, paddingBottom:100}}>
                 <Company
                 companyLogo={data[0].employer_logo}
                 jobTitle={data[0].job_title}
