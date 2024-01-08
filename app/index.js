@@ -9,8 +9,14 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
+import useFetch from "../hook/useFetch";
+
 const Home = () => {
   const router = useRouter();
+  const { data, isLoading, error, refetch } = useFetch("search", {
+    query: "React developer",
+    num_pages: 1,
+  });
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -35,8 +41,8 @@ const Home = () => {
           }}
         >
           <Welcome />
-          <Popularjobs />
-          <Nearbyjobs />
+          <Popularjobs data={data} isLoading={isLoading} error={error} />
+          <Nearbyjobs data={data} isLoading={isLoading} error={error} />
         </View>
       </ScrollView>
     </SafeAreaView>
