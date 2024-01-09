@@ -66,14 +66,14 @@ const JobDetails = () => {
           ) : data.length === 0 ? (
             <Text>No Data</Text>
           ) : (
-            <View style={{padding: SIZES.medium, paddingBottom:100}}>
-                <Company
+            <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+              <Company
                 companyLogo={data[0].employer_logo}
                 jobTitle={data[0].job_title}
                 companyName={data[0].employer_name}
-                location={data[0].employer_country}
-                />
-                <JobAbout />
+                location={data[0].job_country}
+              />
+              <JobAbout />
             </View>
           )}
         </ScrollView>
