@@ -13,6 +13,7 @@ import useFetch from "../hook/useFetch";
 
 const Home = () => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("")
   const { data, isLoading, error, refetch } = useFetch("search", {
     query: "React developer",
     num_pages: 1,
@@ -40,7 +41,15 @@ const Home = () => {
             backgroundColor: "#EEE7DA",
           }}
         >
-          <Welcome />
+          <Welcome 
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          handleClick={() => {
+            if(searchTerm){
+              router.push(`/search/${searchTerm}`);
+            }
+          }}
+          />
           <Popularjobs data={data} isLoading={isLoading} error={error} />
           <Nearbyjobs data={data} isLoading={isLoading} error={error} />
         </View>
