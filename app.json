@@ -9,6 +9,7 @@
     ],
     "name": "react-native-jobApp",
     "slug": "react-native-jobApp",
+    "description" : "This is My First Mobile Application",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/jobs.png",
