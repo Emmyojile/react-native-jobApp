@@ -45,10 +45,9 @@ const Popularjobs = ({ data, isLoading, error }) => {
             data={data}
             renderItem={({ item }) => (
               <PopularjobCard
-              item={item}
-              selectedJob={selectedJob}
-              handleCardPress={handleCardPress}
-              
+                item={item}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
               />
             )}
             keyExtractor={(item) => item?.job_id}
